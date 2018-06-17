@@ -26,13 +26,47 @@ const gulp = require('gulp'),
     watch = require('gulp-watch'),
     include = require('gulp-include'),
     fileinclude = require('gulp-file-include'),
-    If = require('gulp-if');
+    If = require('gulp-if'),
+    htmlhint = require('gulp-htmlhint');
 
 
 let isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 /*При таком условии будет генирироваться sourcemap,
 если нужно создать файл без него, в консоли запускаем ( set NODE_ENV=prodaction , set NODE_ENV=development)
 */
+
+
+//------------------------------------HTML-HINT-----------------------------------------------------
+let hintOptions = {
+  "tagname-lowercase": true,
+    "attr-lowercase": true,
+    "attr-value-double-quotes": true,
+    "attr-value-not-empty": false,
+    "attr-no-duplication": true,
+    "doctype-first": true,
+    "tag-pair": true,
+    "tag-self-close": false,
+    "spec-char-escape": true,
+    "id-unique": true,
+    "src-not-empty": true,
+    "title-require": true,
+    "alt-require": true,
+    "doctype-html5": true,
+    "id-class-value": "dash",
+    "style-disabled": false,
+    "inline-style-disabled": false,
+    "inline-script-disabled": false,
+    "space-tab-mixed-disabled": "space",
+    "id-class-ad-disabled": false,
+    "href-abs-or-rel": false,
+    "attr-unsafe-chars": true
+}
+
+
+//------------------------------------HTML-HINT-----------------------------------------------------
+
+
+
 
 
 //--------------------------------------------------------------------------------------------------
@@ -220,6 +254,8 @@ gulp.task('html:build', function () {
       gulp.src(path.src.html),
       fileinclude({prefix: '@'}),
       cached('html'),
+      htmlhint(hintOptions),
+      htmlhint.failOnError(),
       gulp.dest(path.build.html),
       browserSync.reload({stream: true})
   ).on('error', notify.onError());
