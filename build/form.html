@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="#">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Document</title>
+</head>
+<body class="page-form">
+
+//= template/header-form.html
+
+<main class="main-form">
+  <section class="feedback">
+    <h2 class="feedback__title">Оставьте свой отзыв</h2>
+    <p class="feedback__text">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами
+      достопримечательностях</p>
+    <form class="feedback__form" action="#">
+
+      <fieldset class="feedback__fieldset">
+        <ledend class="feedback__legend">Ваше общее впечатление</ledend>
+        <ul class="feedback__list">
+          <li class="feedback__item">
+            <input class="input-radio" id="positively" name="impression" value="positively" type="radio">
+            <label class="input-radio__label" for="positively">Скорее положительное</label>
+          </li>
+          <li class="feedback__item">
+            <input class="input-radio" id="negatively" name="impression" value="negatively" type="radio">
+            <label class="input-radio__label" for="negatively">Скорее отрицательное</label>
+          </li>
+          <li class="feedback__item">
+            <input class="input-radio" id="neutrally" name="impression" value="neutrally" type="radio">
+            <label class="input-radio__label" for="neutrally">Затрудняюсь ответить</label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="feedback__fieldset">
+        <ledend class="feedback__legend">Представьтесь</ledend>
+        <ul class="feedback__list">
+          <li class="feedback__item">
+            <input class="input-text" id="name" name="name" type="text" placeholder="Петр">
+            <label class="input-text__label" for="name">Имя*:</label>
+          </li>
+          <li class="feedback__item">
+            <input class="input-text" id="surname" name="surname" type="text" placeholder="Иванов">
+            <label class="input-text__label" for="surname">Фамилия*:</label>
+          </li>
+          <li class="feedback__item">
+            <input class="input-text" id="patronymic" name="patronymic" type="text" placeholder="Александрович">
+            <label class="input-text__label" for="patronymic">Отчество*:</label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="feedback__fieldset">
+        <ledend class="feedback__legend">Контактная информация</ledend>
+        <ul class="feedback__list">
+          <li class="feedback__item">
+            <label class="input-text__label" for="phone">Телефон*:</label>
+            <input class="input-text" id="phone" name="phone" type="tel" placeholder="Введите телефон">
+
+          </li>
+          <li class="feedback__item">
+            <label class="input-text__label" for="email">Электронная почта*:</label>
+            <input class="input-text" id="email" name="email" type="email" placeholder="Введите e-mail">
+
+          </li>
+        </ul>
+      </fieldset>
+
+      <fieldset class="feedback__fieldset">
+        <ledend class="feedback__legend">Посещенные достопримечательности:</ledend>
+        <ul class="feedback__list">
+          <li class="feedback__item">
+            <input class="input-checkbox" id="bridge" name="bridge" type="checkbox">
+            <label class="checkbox__label" for="bridge">Мост Дьявола</label>
+          </li>
+          <li class="feedback__item">
+            <input class="input-checkbox" id="mountain" name="mountain" type="checkbox">
+            <label class="checkbox__label" for="mountain">Гора-Колокол</label>
+          </li>
+          <li class="feedback__item">
+            <input class="input-checkbox" id="park" name="park" type="checkbox">
+            <label class="checkbox__label" for="park">Слайд-парк</label>
+          </li>
+          <li class="feedback__item">
+            <input class="input-checkbox" id="red-rock" name="red-rock" type="checkbox">
+            <label class="checkbox__label" for="red-rock">Красные скалы</label>
+          </li>
+
+        </ul>
+      </fieldset>
+
+      <fieldset class="feedback__fieldset">
+        <ledend class="feedback__legend">Опишите свои эмоции</ledend>
+        <textarea class="input-text" name="" id="" cols="30" rows="10" placeholder="Опишите подробно все свои восторги "></textarea>
+      </fieldset>
+
+      <button class="button" type="submit">Отправить отзыв</button>
+
+      <span class="feedback__required-fields">* — обязательные поля</span>
+
+    </form>
+  </section>
+</main>
+
+
+//= include template/footer.html
+
+<script src="js/main.js"></script>
+</body>
+</html>
