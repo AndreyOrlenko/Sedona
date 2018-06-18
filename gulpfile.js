@@ -52,7 +52,6 @@ let hintOptions = {
     "title-require": true,
     "alt-require": true,
     "doctype-html5": true,
-    "id-class-value": "dash",
     "style-disabled": false,
     "inline-style-disabled": false,
     "inline-script-disabled": false,
